@@ -1,0 +1,236 @@
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"wf_f948eb222b064376a33aa3bcb","weight":"normal","style":"normal","allowsCrossOrigin":true}] */
+  font-family: "wf_f948eb222b064376a33aa3bcb";
+  src: url("https://static.wixstatic.com/ufonts/387fbb_f948eb222b064376a33aa3bcb7abad2e/woff2/file.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"avenir-lt-w01_85-heavy1475544","weight":"400","style":"normal","allowsCrossOrigin":true}] */
+  font-family: "avenir-lt-w01_85-heavy1475544";
+  src: url("https://static.parastorage.com/fonts/v2/74290729-59ae-4129-87d0-2eec3974dce1/v1/avenir-lt-w01_85-heavy1475544.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"madefor-text-bold","weight":"700","style":"normal","allowsCrossOrigin":true}] */
+  font-family: "madefor-text-bold";
+  src: url("https://static.parastorage.com/fonts/v2/f73e760d-c6b3-4659-9a8c-9ce1d76c1173/madefor-text.var.original.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"anton","weight":"400","style":"normal","allowsCrossOrigin":true}] */
+  font-family: "anton";
+  src: url("https://static.parastorage.com/tag-bundler/api/v1/fonts-cache/googlefont/woff2/s/anton/v11/1Ptgg87LROyAm3Kz-C8CSKlv.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"avenir-lt-w01_35-light1475496","weight":"400","style":"normal","allowsCrossOrigin":true}] */
+  font-family: "avenir-lt-w01_35-light1475496";
+  src: url("https://static.parastorage.com/fonts/v2/af36905f-3c92-4ef9-b0c1-f91432f16ac1/v1/avenir-lt-w01_35-light1475496.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"eb garamond","weight":"400","style":"normal","allowsCrossOrigin":true}] */
+  font-family: "eb garamond";
+  src: url("https://static.parastorage.com/tag-bundler/api/v1/fonts-cache/googlefont/woff2/s/ebgaramond/v12/SlGUmQSNjdsmc35JDF1K5GR1SDk_YAPI.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"eb garamond","weight":"700","style":"normal","allowsCrossOrigin":true}] */
+  font-family: "eb garamond";
+  src: url("https://static.parastorage.com/tag-bundler/api/v1/fonts-cache/googlefont/woff2/s/ebgaramond/v12/SlGUmQSNjdsmc35JDF1K5GR1SDk_YAPI.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"madefor-display-bold","weight":"700","style":"normal","allowsCrossOrigin":true}] */
+  font-family: "madefor-display-bold";
+  src: url("https://static.parastorage.com/fonts/v2/26656ec7-c27d-4bdc-a9f4-6b498bbfad69/madefor-display.var.original.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"oswald-medium","weight":"400","style":"normal","allowsCrossOrigin":true}] */
+  font-family: "oswald-medium";
+  src: url("https://static.parastorage.com/tag-bundler/api/v1/fonts-cache/googlefont/woff2/s/oswald/v16/cgaIrkaP9Empe8_PwXbajFtXRa8TVwTICgirnJhmVJw.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"roboto-bold","weight":"400","style":"normal","allowsCrossOrigin":true}] */
+  font-family: "roboto-bold";
+  src: url("https://static.parastorage.com/tag-bundler/api/v1/fonts-cache/googlefont/woff2/s/roboto/v18/97uahxiqZRoncBaCEI3aW1tXRa8TVwTICgirnJhmVJw.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --card: transparent;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --card: transparent;
+    --card-foreground: 213 31% 91%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
+  }
+}
+
+@layer components {
+  .unified-site {
+    @apply bg-white text-slate-900 antialiased;
+  }
+
+  /* ── Suppress legacy per-page nav bars and footers from generated pages ── */
+  /* They render their own sticky <header> and <footer> – hide both inside main */
+  .unified-site main header[class*="sticky"],
+  .unified-site main nav[aria-label="Site"],
+  .unified-site main > div > body > div:first-child header,
+  .unified-site main body > div > header {
+    display: none !important;
+  }
+
+  /* Hide any <footer> rendered by a generated-page component */
+  .unified-site main footer {
+    display: none !important;
+  }
+
+  /* Override dark backgrounds from generated pages */
+  .unified-site main [class*="bg-gray-800"],
+  .unified-site main [class*="bg-zinc-600"],
+  .unified-site main [class*="bg-black"],
+  .unified-site main [class*="bg-slate-950"] {
+    background-color: #ffffff !important;
+    background-image: none !important;
+  }
+
+  /* Keep text readable */
+  .unified-site
+    main
+    [class*="text-white"]:not(button):not(a):not([class*="bg-"]) {
+    color: #0f172a !important;
+  }
+
+  /* Clean image presentation */
+  .unified-site main img:not([style*="border-radius: 0"]) {
+    border-radius: 0.75rem;
+    box-shadow: 0 8px 24px -14px rgba(15, 23, 42, 0.14);
+    object-fit: cover;
+  }
+
+  /* Preserve logo image styling */
+  header img,
+  footer img {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .unified-site main iframe,
+  .unified-site main video {
+    border-radius: 0.75rem;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+  }
+
+  /* Remove min-width constraints from generated pages so they don't overflow */
+  .unified-site main [class*="min-w-[980px]"] {
+    min-width: 0 !important;
+  }
+}
