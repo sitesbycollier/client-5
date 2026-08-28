@@ -259,7 +259,7 @@ const SiteFrame = ({ children }: { children: ReactNode }) => {
       <main>{children}</main>
 
       <footer className="border-t border-slate-200 bg-white">
-        <div className="mx-auto grid w-full max-w-7xl gap-8 px-4 py-10 md:grid-cols-[1fr_auto_auto] md:px-8">
+        <div className="mx-auto grid w-full max-w-7xl items-start gap-8 px-4 py-8 md:grid-cols-[1fr_auto_auto] md:gap-12 md:px-8">
           <div className="max-w-sm">
             <img
               src={LOGO_URL}
@@ -272,12 +272,12 @@ const SiteFrame = ({ children }: { children: ReactNode }) => {
               Arkansas markets.
             </p>
           </div>
-          <nav className="grid gap-2 text-sm text-slate-600 md:grid-cols-2">
+          <nav className="grid content-start gap-x-8 gap-y-2 text-sm text-slate-600 sm:grid-cols-2">
             {navItems.slice(1).map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className="hover:text-slate-950"
+                className="leading-6 hover:text-slate-950"
               >
                 {item.label}
               </Link>
