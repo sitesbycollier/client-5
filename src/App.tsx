@@ -1012,7 +1012,7 @@ const ContactPage = () => (
 
 export const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <SiteFrame>
         <Routes>
           <Route path="/" element={<HomePage />} />

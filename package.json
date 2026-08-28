@@ -6,7 +6,9 @@
   "description": "Refreshed Snap Magic Media Group website.",
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "postbuild": "cp dist/index.html dist/404.html",
+    "deploy": "bash scripts/deploy-gh-pages.sh"
   },
   "dependencies": {
     "lucide-react": "^0.453.0",
