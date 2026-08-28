@@ -272,7 +272,7 @@ const SiteFrame = ({ children }: { children: ReactNode }) => {
               Arkansas markets.
             </p>
           </div>
-          <nav className="grid content-start gap-x-8 gap-y-2 text-sm text-slate-600 sm:grid-cols-2">
+          <nav className="flex flex-wrap content-start items-start gap-x-8 gap-y-2 text-sm text-slate-600">
             {navItems.slice(1).map((item) => (
               <Link
                 key={item.path}
