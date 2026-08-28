@@ -24,28 +24,31 @@ import {
   X,
 } from "lucide-react";
 
-const LOGO_URL = "/snapmagic/logo.png";
-const DETAIL_IMAGE_URL = "/snapmagic/detail-interior.jpg";
+const assetUrl = (filename: string) =>
+  `${import.meta.env.BASE_URL}snapmagic/${filename}`;
+
+const LOGO_URL = assetUrl("logo.png");
+const DETAIL_IMAGE_URL = assetUrl("detail-interior.jpg");
 
 const heroImages = [
   {
-    src: "/snapmagic/hero-01.jpg",
+    src: assetUrl("hero-01.jpg"),
     alt: "Exterior real estate photography by Snap Magic Media Group",
   },
   {
-    src: "/snapmagic/hero-02.jpg",
+    src: assetUrl("hero-02.jpg"),
     alt: "Residential property photography by Snap Magic Media Group",
   },
   {
-    src: "/snapmagic/hero-03.jpg",
+    src: assetUrl("hero-03.jpg"),
     alt: "Interior listing photography by Snap Magic Media Group",
   },
   {
-    src: "/snapmagic/hero-04.jpg",
+    src: assetUrl("hero-04.jpg"),
     alt: "Luxury home photography by Snap Magic Media Group",
   },
   {
-    src: "/snapmagic/hero-05.jpg",
+    src: assetUrl("hero-05.jpg"),
     alt: "Property marketing image by Snap Magic Media Group",
   },
 ];
@@ -296,8 +299,21 @@ const SiteFrame = ({ children }: { children: ReactNode }) => {
           </address>
         </div>
         <div className="border-t border-slate-100 py-3 text-center text-xs text-slate-400">
-          &copy; {new Date().getFullYear()} Snap Magic Media Group. All rights
-          reserved.
+          <p>
+            &copy; {new Date().getFullYear()} Snap Magic Media Group. All rights
+            reserved.
+          </p>
+          <p className="mt-1">
+            Built by{" "}
+            <a
+              href="https://sitesbycollier.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-slate-600 underline underline-offset-2 hover:text-slate-900"
+            >
+              Sites By Collier
+            </a>
+          </p>
         </div>
       </footer>
     </div>
