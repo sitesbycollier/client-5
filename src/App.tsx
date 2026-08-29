@@ -32,24 +32,106 @@ const DETAIL_IMAGE_URL = assetUrl("detail-interior.jpg");
 
 const heroImages = [
   {
-    src: assetUrl("hero-01.jpg"),
+    src: assetUrl("residential/residential-01.jpg"),
     alt: "Exterior real estate photography by Snap Magic Media Group",
   },
   {
-    src: assetUrl("hero-02.jpg"),
+    src: assetUrl("residential/residential-02.jpg"),
     alt: "Residential property photography by Snap Magic Media Group",
   },
   {
-    src: assetUrl("hero-03.jpg"),
+    src: assetUrl("residential/residential-03.jpg"),
     alt: "Interior listing photography by Snap Magic Media Group",
   },
   {
-    src: assetUrl("hero-04.jpg"),
+    src: assetUrl("residential/residential-04.jpg"),
     alt: "Luxury home photography by Snap Magic Media Group",
   },
   {
-    src: assetUrl("hero-05.jpg"),
+    src: assetUrl("residential/residential-05.jpg"),
     alt: "Property marketing image by Snap Magic Media Group",
+  },
+  {
+    src: assetUrl("residential/residential-08.jpg"),
+    alt: "Twilight residential image by Snap Magic Media Group",
+  },
+];
+
+const residentialGallery = [
+  {
+    src: assetUrl("residential/residential-01.jpg"),
+    alt: "Bright residential exterior photographed by Snap Magic Media Group",
+  },
+  {
+    src: assetUrl("residential/residential-02.jpg"),
+    alt: "Residential living space photographed for a listing",
+  },
+  {
+    src: assetUrl("residential/residential-03.jpg"),
+    alt: "Residential kitchen and dining photography",
+  },
+  {
+    src: assetUrl("residential/residential-04.jpg"),
+    alt: "Luxury home exterior listing photography",
+  },
+  {
+    src: assetUrl("residential/residential-05.jpg"),
+    alt: "Wide residential property marketing image",
+  },
+  {
+    src: assetUrl("residential/residential-06.jpg"),
+    alt: "Residential interior detail photography",
+  },
+  {
+    src: assetUrl("residential/residential-07.jpg"),
+    alt: "Residential room photographed with premium editing",
+  },
+  {
+    src: assetUrl("residential/residential-08.jpg"),
+    alt: "Twilight residential exterior image",
+  },
+  {
+    src: assetUrl("residential/residential-09.jpg"),
+    alt: "Residential listing photography for property marketing",
+  },
+  {
+    src: assetUrl("residential/residential-10.jpg"),
+    alt: "Residential property feature image",
+  },
+  {
+    src: assetUrl("residential/residential-11.jpg"),
+    alt: "Interior residential listing image",
+  },
+  {
+    src: assetUrl("residential/residential-12.jpg"),
+    alt: "Residential property image for online listing media",
+  },
+];
+
+const commercialGallery = [
+  {
+    src: assetUrl("commercial/commercial-01.jpg"),
+    alt: "Commercial property aerial photography by Snap Magic Media Group",
+  },
+  {
+    src: assetUrl("commercial/commercial-02.jpg"),
+    alt: "Panoramic aerial image of a commercial property",
+  },
+  {
+    src: assetUrl("commercial/commercial-03.jpg"),
+    alt: "Commercial architecture photography",
+  },
+  {
+    src: assetUrl("commercial/commercial-04.jpg"),
+    alt: "Commercial site media for business marketing",
+  },
+  {
+    src: assetUrl("commercial/commercial-05.jpg"),
+    alt: "Commercial interior and architectural media",
+  },
+  {
+    src: assetUrl("commercial/commercial-06.jpg"),
+    alt: "Business property photography and site documentation",
   },
 ];
 
@@ -68,7 +150,7 @@ type ServiceItem = {
 
 const navItems: NavItem[] = [
   { label: "Home", path: "/" },
-  { label: "Services", path: "/services" },
+  { label: "Residential", path: "/residential" },
   { label: "Packages", path: "/packages" },
   { label: "Commercial", path: "/commercial" },
   { label: "Contact", path: "/contact" },
@@ -79,28 +161,28 @@ const serviceItems: ServiceItem[] = [
     title: "Real Estate Photography",
     description:
       "Magazine-grade listing photography for Realtors, short-term rental owners, FSBO sellers, and luxury properties.",
-    path: "/services",
+    path: "/residential",
     Icon: Camera,
   },
   {
     title: "Video Production",
     description:
       "Property walkthroughs, agent promos, neighborhood features, sales presentations, and AI-assisted lifestyle videos.",
-    path: "/services",
+    path: "/residential",
     Icon: Film,
   },
   {
     title: "Aerial Photo and Video",
     description:
       "FAA-certified drone media for listings, land, waterfront homes, commercial sites, and construction documentation.",
-    path: "/services",
+    path: "/residential",
     Icon: Plane,
   },
   {
     title: "Matterport 3D Tours",
     description:
       "Immersive 3D digital twins with 360-degree views, measurements, points of interest, and optional floor plans.",
-    path: "/services",
+    path: "/residential",
     Icon: ScanLine,
   },
   {
@@ -342,6 +424,41 @@ const SectionHeader = ({
   </div>
 );
 
+const PortfolioGallery = ({
+  eyebrow,
+  title,
+  copy,
+  images,
+}: {
+  eyebrow: string;
+  title: string;
+  copy: string;
+  images: typeof residentialGallery;
+}) => (
+  <section className="bg-white px-4 py-16 md:px-8">
+    <div className="mx-auto max-w-7xl">
+      <SectionHeader eyebrow={eyebrow} title={title} copy={copy} />
+      <div className="mt-10 grid auto-rows-[220px] gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        {images.map((image, index) => (
+          <figure
+            key={image.src}
+            className={`overflow-hidden rounded-lg bg-slate-100 ${
+              index === 0 ? "sm:col-span-2 sm:row-span-2" : ""
+            } ${index === 1 && images.length > 8 ? "lg:row-span-2" : ""}`}
+          >
+            <img
+              src={image.src}
+              alt={image.alt}
+              loading={index < 3 ? "eager" : "lazy"}
+              className="h-full w-full object-cover transition duration-500 hover:scale-[1.03]"
+            />
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
 const Hero = () => {
   const [activeImage, setActiveImage] = useState(0);
 
@@ -355,7 +472,7 @@ const Hero = () => {
 
   return (
     <section className="bg-slate-950 text-white">
-      <div className="mx-auto grid min-h-[calc(100vh-88px)] w-full max-w-7xl items-center gap-10 px-4 py-12 md:grid-cols-[1.05fr_0.95fr] md:px-8">
+      <div className="mx-auto grid min-h-[calc(100vh-88px)] w-full max-w-7xl items-center gap-10 px-4 py-12 md:grid-cols-[0.92fr_1.08fr] md:px-8">
       <div className="space-y-7">
         <p className="text-sm font-semibold uppercase tracking-[0.18em] text-amber-300">
           Arkansas real estate media
@@ -395,7 +512,7 @@ const Hero = () => {
           ))}
         </div>
       </div>
-      <div className="relative min-h-[420px] overflow-hidden rounded-lg border border-white/10">
+      <div className="relative min-h-[460px] overflow-hidden rounded-lg border border-white/10 md:min-h-[600px]">
         {heroImages.map((image, index) => (
           <img
             key={image.src}
@@ -434,6 +551,56 @@ const Hero = () => {
 const HomePage = () => (
   <div>
     <Hero />
+    <section className="bg-stone-50 px-4 py-16 md:px-8">
+      <div className="mx-auto max-w-7xl">
+        <SectionHeader
+          eyebrow="Residential and commercial"
+          title="Two clear paths, both built around strong property imagery."
+          copy="Residential work now has its own destination for listing photography, video, aerials, Matterport, floor plans, and twilight images. Commercial stays separate because those projects are usually quoted by scope."
+        />
+        <div className="mt-10 grid gap-5 lg:grid-cols-2">
+          {[
+            {
+              title: "Residential Media",
+              copy: "Showcase photography with premium editing, video, aerial imaging, Matterport 3D tours, CubiCasa floor plans, property websites, and listing marketing.",
+              path: "/residential",
+              image: residentialGallery[1],
+            },
+            {
+              title: "Commercial Media",
+              copy: "Architectural photography, panoramic aerials, site documentation, business video, and marketing assets quoted around the property and campaign.",
+              path: "/commercial",
+              image: commercialGallery[0],
+            },
+          ].map((item) => (
+            <Link
+              key={item.title}
+              to={item.path}
+              className="group overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:border-amber-300 hover:shadow-md"
+            >
+              <div className="aspect-[16/10] overflow-hidden bg-slate-100">
+                <img
+                  src={item.image.src}
+                  alt={item.image.alt}
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                />
+              </div>
+              <div className="p-5">
+                <h2 className="text-2xl font-bold text-slate-950">
+                  {item.title}
+                </h2>
+                <p className="mt-3 text-sm leading-6 text-slate-600">
+                  {item.copy}
+                </p>
+                <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-slate-950">
+                  View work <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
     <section className="bg-white px-4 py-16 md:px-8">
       <div className="mx-auto max-w-7xl">
         <SectionHeader
@@ -765,13 +932,30 @@ const BookAShootPage = () => {
   );
 };
 
-const ServicesPage = () => (
+const ResidentialPage = () => (
   <div>
     <PageShell
-      eyebrow="Services"
-      title="Photography, video, aerials, 3D tours, and floor plans in one place."
-      copy="This combines the smaller residential service pages into one clearer destination. Real estate photography starts at $175 for homes up to 2,000 sq. ft., with video, drone, Matterport, CubiCasa floor plans, property websites, and marketing assets available as add-ons or packages."
-    />
+      eyebrow="Residential"
+      title="Listing media that makes the property feel ready before the showing."
+      copy="Showcase photography with premium editing, twilight images, video, aerial imaging, Matterport 3D tours, CubiCasa floor plans, property websites, and listing marketing for Realtors, short-term rental owners, FSBO sellers, and luxury homes."
+    >
+      <div className="flex flex-wrap justify-center gap-3">
+        <a
+          href={ORDER_PORTAL_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 rounded-md bg-amber-500 px-5 py-3 text-sm font-semibold text-slate-950 hover:bg-amber-400"
+        >
+          Order Online <ArrowRight className="h-4 w-4" />
+        </a>
+        <Link
+          to="/packages"
+          className="inline-flex items-center gap-2 rounded-md border border-white/30 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10"
+        >
+          View Packages
+        </Link>
+      </div>
+    </PageShell>
     <section className="bg-white px-4 py-16 md:px-8">
       <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr]">
         <div>
@@ -781,7 +965,9 @@ const ServicesPage = () => (
           <p className="mt-4 text-base leading-7 text-slate-600">
             Snap Magic Media Group serves Realtors, short-term rental owners,
             Airbnb hosts, FSBO sellers, and luxury listings across Hot Springs,
-            Little Rock, and nearby Arkansas communities.
+            Little Rock, and nearby Arkansas communities. The residential page
+            now carries the photography, video, aerial, 3D tour, and floor-plan
+            content that used to be split across too many service pages.
           </p>
           <Link
             to="/packages"
@@ -793,6 +979,8 @@ const ServicesPage = () => (
         <div className="grid gap-4 sm:grid-cols-2">
           {[
             "Bright interior and exterior listing photography",
+            "Showcase photography with premium editing",
+            "Twilight images captured at the right evening light",
             "90-second property videos starting at $300",
             "FAA-certified drone photography and cinematic aerial video",
             "Matterport-authorized 3D tours and measurements",
@@ -809,6 +997,12 @@ const ServicesPage = () => (
         </div>
       </div>
     </section>
+    <PortfolioGallery
+      eyebrow="Residential gallery"
+      title="More of the current site image library, now featured larger."
+      copy="These images come from the live residential gallery and give the refreshed site a stronger visual proof point before visitors reach pricing or the order portal."
+      images={residentialGallery}
+    />
     <PackagesSection />
   </div>
 );
@@ -920,20 +1114,28 @@ const MatterportPage = () => (
 );
 
 const CommercialPage = () => (
-  <ServiceDetailPage
-    Icon={Building2}
-    eyebrow="Commercial"
-    title="Architectural and business media quoted around the project."
-    copy="Commercial work is quoted based on scope. Snap Magic Media Group supports business properties, architectural spaces, construction sites, commercial listings, branded videos, and marketing campaigns."
-    bullets={[
-      "Architectural photography for commercial properties",
-      "Panoramic aerials and site documentation",
-      "Business and product video explainers",
-      "Commercial Matterport and as-built scanning",
-      "Print, web, and social media campaign assets",
-      "Custom production planning for business goals",
-    ]}
-  />
+  <div>
+    <ServiceDetailPage
+      Icon={Building2}
+      eyebrow="Commercial"
+      title="Architectural and business media quoted around the project."
+      copy="Commercial photography, panoramic aerials, branded video, Matterport, and marketing assets are quoted based on property type, access, usage, and campaign scope."
+      bullets={[
+        "Architectural photography for commercial properties",
+        "Panoramic aerials and site documentation",
+        "Business and product video explainers",
+        "Commercial Matterport and as-built scanning",
+        "Print, web, and social media campaign assets",
+        "Custom production planning for business goals",
+      ]}
+    />
+    <PortfolioGallery
+      eyebrow="Commercial gallery"
+      title="Commercial imagery needs space to show scale."
+      copy="The commercial page now uses the live site's business and aerial images as a larger gallery, keeping this work separate from residential listing packages."
+      images={commercialGallery}
+    />
+  </div>
 );
 
 const MarketingPage = () => (
@@ -1033,12 +1235,13 @@ export const App = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/book-a-shoot" element={<BookAShootPage />} />
-          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/residential" element={<ResidentialPage />} />
+          <Route path="/services" element={<Navigate to="/residential" replace />} />
           <Route path="/packages" element={<PackagesPage />} />
-          <Route path="/photography" element={<Navigate to="/services" replace />} />
-          <Route path="/video" element={<Navigate to="/services" replace />} />
-          <Route path="/aerials" element={<Navigate to="/services" replace />} />
-          <Route path="/matterport" element={<Navigate to="/services" replace />} />
+          <Route path="/photography" element={<Navigate to="/residential" replace />} />
+          <Route path="/video" element={<Navigate to="/residential" replace />} />
+          <Route path="/aerials" element={<Navigate to="/residential" replace />} />
+          <Route path="/matterport" element={<Navigate to="/residential" replace />} />
           <Route path="/commercial" element={<CommercialPage />} />
           <Route path="/media-marketing" element={<Navigate to="/commercial" replace />} />
           <Route path="/contact" element={<ContactPage />} />
